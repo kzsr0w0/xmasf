@@ -2,4 +2,3 @@ uvicorn
 tensorflow
 tensorflow_hub
 numpy
-io
