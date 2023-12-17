@@ -2,3 +2,4 @@ uvicorn
 tensorflow
 tensorflow_hub
 numpy
+grpcio
