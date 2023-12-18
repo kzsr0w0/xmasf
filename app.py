@@ -13,3 +13,5 @@ if uploaded_file is not None:
     # 結果を表示
     if response.ok:
         st.image(response.content, caption='Styled Image', use_column_width=True)
+    else:
+        print('error!')
