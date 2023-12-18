@@ -22,9 +22,9 @@ model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v
 
 # --- スタイル画像の設定 --- #
 #絶対パス
-#style_image_path = 'C:\\folder\\make\\Python\\xmasf\\path_to_christmas_style_image.jpg'
+style_image_path = 'C:\\folder\\make\\Python\\xmasf\\path_to_christmas_style_image.jpg'
 #
-style_image_path='path_to_christmas_style_image.jpg'
+#style_image_path='path_to_christmas_style_image.jpg'
 style_image = Image.open(style_image_path).convert('RGB')
 style_image = style_image.resize((256, 256))
 style_image = tf.keras.preprocessing.image.img_to_array(style_image)
@@ -51,7 +51,9 @@ async def transfer_style(content_file: UploadFile = File(...)):
     content_image = load_img(io.BytesIO(await content_file.read()))
 
     # スタイル転送を実行
-    stylized_image = model(tf.constant(content_image), tf.constant(style_image))[0]
+    #stylized_image = model(tf.constant(content_image), tf.constant(style_image))[0]
+    stylized_image = model(tf.constant(style_image), tf.constant(content_image))[0]
+
 
     # 出力画像をPIL形式に変換し、バイト列に変換
     stylized_image = tf.keras.preprocessing.image.array_to_img(stylized_image[0])
