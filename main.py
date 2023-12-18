@@ -8,7 +8,7 @@
 
 # モジュールのインポート
 from fastapi import FastAPI, File, UploadFile, Response
-from PIL import Image
+from Pillow import Image
 import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np

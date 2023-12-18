@@ -4,4 +4,4 @@ tensorflow
 tensorflow_hub
 numpy
 grpcio
-PIL
+Pillow
