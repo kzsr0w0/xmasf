@@ -5,3 +5,4 @@ tensorflow_hub
 numpy
 grpcio
 Pillow
+python-multipart
